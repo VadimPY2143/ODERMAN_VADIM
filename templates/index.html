@@ -9,7 +9,13 @@
 </head>
 <body>
     <h1>Dominos Pizza</h1>
-    <p>Menu</p>
+    <nav>
+
+    {% for Menu in ['Menu']%}
+    <a href="{{ url_for(Menu) }}">{{ Menu }}</a>
+    {% endfor %}
+
+</nav>
     <img src="static/dominos-pizza.jpg">
 </body>
 </html>
