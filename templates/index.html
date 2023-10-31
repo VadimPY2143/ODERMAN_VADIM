@@ -11,7 +11,7 @@
     <h1>Dominos Pizza</h1>
     <nav>
 
-    {% for Menu in ['Menu']%}
+    {% for Menu in ['show_menu']%}
     <a href="{{ url_for(Menu) }}">{{ Menu }}</a>
     {% endfor %}
 

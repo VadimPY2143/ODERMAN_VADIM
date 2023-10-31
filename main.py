@@ -22,13 +22,11 @@ def horoskope():
     return render_template('index.html')
 
 @app.route('/menu/')
-def Menu():
+def show_menu():
     context = {
         'pizzas': menu_pizza
     }
     return render_template('menu.html', **context)
-
-
 
 
 if __name__ == '__main__':
