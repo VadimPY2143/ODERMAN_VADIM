@@ -6,9 +6,6 @@ import random
 
 app = Flask(__name__)
 
-
-mas = ['Сьогодні вас чекає гарний день', 'Завтра вас чекає поганий день', 'Вам підвищать зарплату', 'Вас чекають маленькі неприємності']
-
 menu_pizza=[
     {'pizza': 'Карбонара', 'price': 300},
     {'pizza': 'Пеппероні', 'price': 250},
@@ -28,6 +25,10 @@ def show_menu():
     }
     return render_template('menu.html', **context)
 
+
+@app.route('/order')
+def make_order():
+    return render_template('order.html')
 
 if __name__ == '__main__':
     app.run(port=8086, debug=True)

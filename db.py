@@ -64,3 +64,6 @@ insert_to_database('Гавайська', 200)
 insert_to_database('Салямі', 249)
 insert_to_database('Пеппероні', 250)
 insert_to_database('Карбонара', 300)
+
+
+

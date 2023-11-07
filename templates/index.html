@@ -16,6 +16,16 @@
     {% endfor %}
 
 </nav>
+
+    <nav>
+
+    {% for Order in ['make_order']%}
+    <a href="{{ url_for(Order) }}">{{ Order }}</a>
+    {% endfor %}
+
+</nav>
+
+
     <img src="static/dominos-pizza.jpg">
 </body>
 </html>

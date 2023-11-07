@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
+</head>
+<body>
+<form action="{{ url_for('make_order') }}" method="post">
+    <p>
+      <label for="name">Назва піци</label>
+      <input name="pizza_name" type="text">
+    </p>
+    <p>
+      <label for="name">Кількість</label>
+      <input name="pizza_count" type="text">
+    </p>
+    <p>
+      <label for="name">Адреса доставки</label>
+      <input name="delivery_adress" type="text">
+    </p>
+    <p>
+      <label for="name">Ваш номер телефону</label>
+      <input name="phone_number" type="text">
+    </p>
+    <p><button type="submit">Зробити замовлення</button></p>
+</body>
+</html>
