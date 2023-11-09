@@ -6,21 +6,22 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
 </head>
 <body>
+<h1>Введіть ваші дані</h1>
 <form action="{{ url_for('make_order') }}" method="post">
     <p>
-      <label for="name">Назва піци</label>
+      <label for="pizza_name">Назва піци</label>
       <input name="pizza_name" type="text">
     </p>
     <p>
-      <label for="name">Кількість</label>
+      <label for="pizza_count">Кількість</label>
       <input name="pizza_count" type="text">
     </p>
     <p>
-      <label for="name">Адреса доставки</label>
+      <label for="delivery_adress">Адреса доставки</label>
       <input name="delivery_adress" type="text">
     </p>
     <p>
-      <label for="name">Ваш номер телефону</label>
+      <label for="phone_number">Ваш номер телефону</label>
       <input name="phone_number" type="text">
     </p>
     <p><button type="submit">Зробити замовлення</button></p>
