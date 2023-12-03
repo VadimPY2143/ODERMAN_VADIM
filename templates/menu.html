@@ -11,10 +11,10 @@
 <ul>
 
 
-  {% for pizza in pizzas|sort(attribute="price") %}
+  {% for pizza in pizzas %}
 
   <li>
-  <h4> {{ pizza.pizza }} - {{ pizza.price }}грн </h4>
+  <h4> {{ pizza['name'] }} - {{ pizza['price'] }}грн </h4>
 
 
   </li>

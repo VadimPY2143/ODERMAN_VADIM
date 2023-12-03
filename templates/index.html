@@ -11,21 +11,31 @@
     <h1>Dominos Pizza</h1>
     <nav>
 
-    {% for Menu in ['show_menu']%}
-    <a href="{{ url_for(Menu) }}">{{ Menu }}</a>
+    {% for Menu in ['show_menu'] %}
+        <div> </div>
+    <a href="{{ url_for(Menu) }}">Меню</a>
     {% endfor %}
 
 </nav>
 
     <nav>
 
-    {% for Order in ['make_order']%}
-    <a href="{{ url_for(Order) }}">{{ Order }}</a>
+    {% for Order in ['make_order'] %}
+    <a href="{{ url_for(Order) }}">Замовити</a>
+    {% endfor %}
+
+</nav>
+    <nav>
+
+    {% for creation in ['create_pizza'] %}
+    <a href="{{ url_for(creation) }}">Створити</a>
     {% endfor %}
 
 </nav>
 
 
+<div class="gradient-border">
     <img src="static/dominos-pizza.jpg">
+    </div>
 </body>
 </html>

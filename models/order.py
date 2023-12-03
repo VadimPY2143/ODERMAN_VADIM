@@ -19,5 +19,4 @@ class Order(Base):
     delivery_adress: Mapped[str] = mapped_column(String(250))
     groups: Mapped[List[Group]] = relationship(secondary=student_group_assoc_table)
 
-    def __str__(self) -> str:
-        return f''
+
