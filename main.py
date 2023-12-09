@@ -4,15 +4,7 @@ from flask import url_for, redirect, flash, abort
 from datetime import datetime
 import sqlite3
 
-
 app = Flask(__name__)
-
-menu_pizza=[
-    {'pizza': 'Карбонара', 'price': 300},
-    {'pizza': 'Пеппероні', 'price': 250},
-    {'pizza': 'Салямі', 'price': 249},
-    {'pizza': 'Гавайська', 'price': 200}
-]
 
 
 @app.route('/')
@@ -63,8 +55,27 @@ def create_pizza():
             connection.close()
             return render_template('index.html')
 
-
     return render_template('create.html')
+
+
+poll_data = {
+    'question': 'Чи подобається вам наша піца?',
+    'choice': ['Так','Ні']
+}
+
+@app.route('/poll1')
+def start_poll():
+    return render_template('poll.html', data = poll_data)
+
+@app.route('/poll')
+def poll():
+    
+    return render_template('thankyou.html', data = poll_data)
+
+
+
+
+
 
 
 if __name__ == '__main__':

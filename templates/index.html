@@ -33,6 +33,14 @@
 
 </nav>
 
+    <nav>
+
+    {% for poll in ['start_poll'] %}
+    <a href="{{ url_for(poll) }}">Голосування</a>
+    {% endfor %}
+
+</nav>
+
 
 <div class="gradient-border">
     <img src="static/dominos-pizza.jpg">
