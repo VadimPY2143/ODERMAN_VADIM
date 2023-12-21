@@ -3,6 +3,8 @@ from flask import render_template, request
 from flask import url_for, redirect, flash, abort
 from datetime import datetime
 import sqlite3
+import requests
+from requests import get
 
 app = Flask(__name__)
 
@@ -58,6 +60,33 @@ def create_pizza():
     return render_template('create.html')
 
 
+def get_current_weather(city):
+    API_KEY = 'bddebc304257efa7289dcdb93bebeee5'
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data
+
+    else:
+        return None
+
+
+print(get_current_weather('Lviv'))
+@app.route('/weather')
+def weather():
+    return render_template('weather_form.html')
+
+
+@app.route('/weather_result',  methods = ['GET', 'POST'])
+def weather_result_show():
+    if request.method == 'POST':
+        city = request.form['city']
+        answer = get_current_weather(city)
+        return render_template('weather_show.html', data = answer)
+    
+
+
 poll_data = {
     'question': 'Чи подобається вам наша піца?',
     'choice': ['Так','Ні']
@@ -69,14 +98,9 @@ def start_poll():
 
 @app.route('/poll')
 def poll():
-    
     return render_template('thankyou.html', data = poll_data)
 
 
 
-
-
-
-
 if __name__ == '__main__':
-    app.run(port=8086, debug=True)
+    app.run(port=8086, host="0.0.0.0", debug=True)

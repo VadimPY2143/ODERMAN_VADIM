@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
+</head>
+<body>
+<form action="/weather_result", method="post">
+    <p>
+      <label for="city">Ваше місто</label>
+      <input name="city" type="text">
+    </p>
+    <p>
+    <input type="submit" value="Підтвердити">
+    </p>
+
+</body>
+</html>
