@@ -5,13 +5,9 @@ from datetime import datetime
 import sqlite3
 import requests
 from requests import get
+import random
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def horoskope():
-    return render_template('index.html')
 
 def get_db_connection():
     connection = sqlite3.connect(database='sqlite_python_oderman.db')
@@ -19,11 +15,22 @@ def get_db_connection():
     return connection
 
 
+@app.route('/')
+def horoskope():
+    return render_template('index.html')
+
+
+pizza_list = []
+connection = get_db_connection()
+pizzas = connection.execute('SELECT * FROM pizza_menu').fetchall()
+for p in pizzas:
+    pizza_list.append(p['name'])
+
+
 @app.route('/menu/')
 def show_menu():
     connection = get_db_connection()
     pizzas = connection.execute('SELECT * FROM pizza_menu').fetchall()
-
     return render_template('menu.html', pizzas = pizzas)
 
 
@@ -72,7 +79,7 @@ def get_current_weather(city):
         return None
 
 
-print(get_current_weather('Lviv'))
+
 @app.route('/weather')
 def weather():
     return render_template('weather_form.html')
@@ -83,7 +90,8 @@ def weather_result_show():
     if request.method == 'POST':
         city = request.form['city']
         answer = get_current_weather(city)
-        return render_template('weather_show.html', data = answer)
+        pizza_recommendation = random.choice(pizza_list)
+        return render_template('weather_show.html', data = answer, pizza_r = pizza_recommendation)
     
 
 

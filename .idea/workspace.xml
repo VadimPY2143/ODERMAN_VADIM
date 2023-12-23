@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ba22443-0ce5-4e98-ad98-eab95e3673e1" name="Changes" comment="Додав голосування">
-      <change afterPath="$PROJECT_DIR$/templates/weather_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/weather_show.html" afterDir="false" />
+    <list default="true" id="4ba22443-0ce5-4e98-ad98-eab95e3673e1" name="Changes" comment="Додав перегляд погоди">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite_python_oderman.db" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite_python_oderman.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/weather_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/weather_show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702127082935</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Додав перегляд погоди">
+      <option name="closed" value="true" />
+      <created>1703176445975</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703176445975</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,6 +159,7 @@
     <MESSAGE value="Стилізував сторінку та додав можливістьдодавати піци в бд" />
     <MESSAGE value="Стилізував сторінку та додав можливість додавати піци в бд" />
     <MESSAGE value="Додав голосування" />
-    <option name="LAST_COMMIT_MESSAGE" value="Додав голосування" />
+    <MESSAGE value="Додав перегляд погоди" />
+    <option name="LAST_COMMIT_MESSAGE" value="Додав перегляд погоди" />
   </component>
 </project>
