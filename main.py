@@ -6,17 +6,21 @@ import sqlite3
 import requests
 from requests import get
 import random
+from Registration import RegistrationForm
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'Vadym'
 
 def get_db_connection():
     connection = sqlite3.connect(database='sqlite_python_oderman.db')
     connection.row_factory = sqlite3.Row
     return connection
 
-
-@app.route('/')
-def horoskope():
+@app.route('/', methods = ['GET', 'POST'])
+def main():
+    form = RegistrationForm()
+    if request.method == 'GET':
+        return render_template('registration.html', form = form)
     return render_template('index.html')
 
 
@@ -93,7 +97,6 @@ def weather_result_show():
         pizza_recommendation = random.choice(pizza_list)
         return render_template('weather_show.html', data = answer, pizza_r = pizza_recommendation)
     
-
 
 poll_data = {
     'question': 'Чи подобається вам наша піца?',
